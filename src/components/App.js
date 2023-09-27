@@ -16,11 +16,21 @@ function App() {
     setItems((items) => items.map((item) => item.id === id ? { ...item, packed: !item.packed } : item))
   }
 
+  function handleDeleteItem(id) {
+    setItems((items) => items.filter((item) => item.id !== id))
+  }
+
+  function handleResetItems() {
+    const confirm = window.confirm("Are you sure you want delete all items?");
+
+    if (confirm) setItems([])
+  }
+
   return (
     <div className="app">
       <Logo />
       <Form onAddItems={handleAddItems} />
-      <PackingList items={items} onToggleItem={handleToggleItem} />
+      <PackingList items={items} onToggleItem={handleToggleItem} onDeleteItem={handleDeleteItem} onResetItems={handleResetItems} />
       <Stats items={items} />
     </div>
   )
