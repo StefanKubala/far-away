@@ -12,11 +12,15 @@ function App() {
     setItems((items) => [...items, item])
   }
 
+  function handleToggleItem(id) {
+    setItems((items) => items.map((item) => item.id === id ? { ...item, packed: !item.packed } : item))
+  }
+
   return (
     <div className="app">
       <Logo />
       <Form onAddItems={handleAddItems} />
-      <PackingList items={items} />
+      <PackingList items={items} onToggleItem={handleToggleItem} />
       <Stats items={items} />
     </div>
   )
