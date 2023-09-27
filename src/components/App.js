@@ -1,5 +1,6 @@
 import Logo from "./Logo";
 import Form from "./Form"
+import PackingList from "./PackingList"
 import { useState } from "react";
 
 
@@ -14,6 +15,7 @@ function App() {
     <div className="app">
       <Logo />
       <Form onAddItems={handleAddItems} />
+      <PackingList items={items} />
     </div>
   )
 }
