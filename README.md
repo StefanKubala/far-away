@@ -1,3 +1,5 @@
+![Far-away desktop design](https://github.com/StefanKubala/far-away/blob/main/public/Screenshot.png "Far-away desktop design")
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
